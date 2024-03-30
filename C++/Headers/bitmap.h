@@ -1,7 +1,3 @@
-//
-// Created by Hanwen on 2024/1/27.
-//
-
 #ifndef PAS_BITMAP_H
 #define PAS_BITMAP_H
 typedef unsigned char* bitmap;
