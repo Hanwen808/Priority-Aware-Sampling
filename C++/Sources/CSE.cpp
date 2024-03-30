@@ -1,6 +1,3 @@
-//
-// Created by lenovo on 2024/1/31.
-//
 #include "../Headers/CSE.h"
 #include <ctime>
 #include "../Headers/MurmurHash3.h"
