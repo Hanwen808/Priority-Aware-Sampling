@@ -1,6 +1,3 @@
-//
-// Created by lenovo on 2024/1/31.
-//
 #include "../Headers/vHLL.h"
 
 void VHLL::update(char * src, char * dst, uint32_t priority) {
