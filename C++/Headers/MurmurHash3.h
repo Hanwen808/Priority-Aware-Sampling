@@ -1,7 +1,3 @@
-//
-// Created by lenovo on 2024/1/27.
-//
-
 #ifndef PAS_MURMURHASH3_H
 #define PAS_MURMURHASH3_H
 #if defined(_MSC_VER) && (_MSC_VER < 1600)
