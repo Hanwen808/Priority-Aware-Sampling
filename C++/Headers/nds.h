@@ -1,7 +1,3 @@
-//
-// Created by lenovo on 2024/1/27.
-//
-
 #ifndef PAS_NDS_H
 #define PAS_NDS_H
 #include "bitmap.h"
