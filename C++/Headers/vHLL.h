@@ -1,7 +1,3 @@
-//
-// Created by lenovo on 2024/1/31.
-//
-
 #ifndef PAS_VHLL_H
 #define PAS_VHLL_H
 #include <iostream>
