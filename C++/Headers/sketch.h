@@ -1,7 +1,3 @@
-//
-// Created by lenovo on 2024/1/27.
-//
-
 #ifndef PAS_SKETCH_H
 #define PAS_SKETCH_H
 #include <iostream>
