@@ -1,6 +1,3 @@
-//
-// Created by lenovo on 2024/1/27.
-//
 #include "../Headers/pas.h"
 
 PAS::PAS(uint32_t m, float * parray, float pre) {
