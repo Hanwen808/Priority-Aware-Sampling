@@ -1,5 +1,3 @@
-//
-// Created by Hanwen on 2023/11/19.
 //-----------------------------------------------------------------------------
 // MurmurHash3 was written by Austin Appleby, and is placed in the public
 // domain. The author hereby disclaims copyright to this source code.
