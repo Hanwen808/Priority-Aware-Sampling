@@ -1,6 +1,3 @@
-//
-// Created by lenovo on 2024/1/27.
-//
 #include "../Headers/nds.h"
 
 using namespace std;
