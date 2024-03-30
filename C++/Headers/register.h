@@ -1,7 +1,3 @@
-//
-// Created by Hanwen on 2024/1/27.
-//
-
 #ifndef PAS_REGISTER_H
 #define PAS_REGISTER_H
 typedef unsigned char* registerArray;
