@@ -5,9 +5,9 @@
 #include <unordered_set>
 #include <time.h>
 //#include "Headers/nds.h"
-//#include "Headers/pas.h"
+#include "Headers/pas.h"
 //#include "Headers/CSE.h"
-#include "Headers/vHLL.h"
+//#include "Headers/vHLL.h"
 using namespace std;
 // Updating sketch and testing the processing throughput.
 void processPackets(Sketch* sketch, vector<pair<pair<char*, char*>, uint32_t>>& dataset) {
@@ -36,7 +36,7 @@ void getDataSet(string dataDir, unsigned int numOfMinutes, vector<pair<pair<char
     clock_t start = clock();
     for (unsigned int i = 0; i < numOfMinutes; i++) {
         sprintf(dataFileName, "%02d.txt ", i);
-        string oneDataFilePath = "../data/00_p4.txt";
+        string oneDataFilePath = "./data/00_3_caida2019.txt";
         cout << oneDataFilePath << endl;
         fstream fin(oneDataFilePath);
         while (fin.is_open() && fin.peek() != EOF) {
@@ -113,17 +113,18 @@ int main() {
     //prepare the sampling
     cout << endl;
     cout << "prepare the sampling" << endl;
-    unsigned int bitsNum = 100 * 1024 * 8;
+    unsigned int bitsNum = 50 * 1024 * 8;
     cout << "Total space is " << 1.0 * bitsNum / 8 / 1024 << "KB" << endl;
-    /*
-    float parray[3] = {0.0825, 0.1235, 0.1744};
-    unsigned int regNum = 100 * 1024 * 8 / 2;
-    cout << "Total space is " << regNum * 2 / 8 / 1024 << "KB" << endl;
-     Sketch* sketch = new PAS(regNum, parray, 0.3);
-    */
+
+    float prearray[3] = {0.3400293208877289, 0.34649084963007704, 0.36162086665407117}; //{0.226, 0.339, 0.659};
+    float postarray[3] = {0.04978706836786395, 0.1353352832366127, 0.36787944117144233}; //{0.367, 0.367, 0.367};
+    unsigned int regNum = bitsNum / 2;
+    cout << "Total space is " << bitsNum / 8 / 1024 << "KB" << endl;
+    Sketch* sketch = new PAS(regNum, prearray, postarray);
+
     //Sketch* sketch = new NDS(bitsNum, 0.1);
     //CSE* sketch = new CSE(8000000, 1000);
-    VHLL* sketch = new VHLL(bitsNum / 5, 32);
+    //VHLL* sketch = new VHLL(bitsNum / 5, 32);
     cout << endl;
     cout << "start sampling" << endl;
     processPackets(sketch, dataset);
@@ -131,8 +132,8 @@ int main() {
     //sketch->setVn();
     cout << endl;
     cout << "save the result in spreads.txt ..." << endl;
-    string outputFilePath = "../records/spreads_vhll_";
-    sketch->updateParams();
+    string outputFilePath = "./records/spreads_pas_";
+    //sketch->updateParams();
     saveResults(outputFilePath, sketch, realFlowInfo);
     cout << "Save processing finished." << endl;
     return 0;
