@@ -9,8 +9,8 @@ class PAS:
     '''
     def __init__(self, m, pre_lst, post_lst, max_prior):
         self.pre_sampling_lst = pre_lst
-        self.pre_sample_seed = 21321
-        self.sample_seed = 98123
+        #self.pre_sample_seed = 21321
+        #self.sample_seed = 98123
         self.hash_seed = 13123
         self.m = m
         self.max_prior = max_prior
@@ -44,17 +44,18 @@ class PAS:
             self.hash_table[i] = defaultdict(int)
 
     def update(self, src, dst, p):
-        pre_sample_idx = mmh3.hash(src + dst, seed = self.pre_sample_seed) % 0xffffffff
+        pre_sample_idx = mmh3.hash(src + dst, seed = self.hash_seed) % 0xffffffff
         if pre_sample_idx > self.pre_sampling_lst[p - 1] * 0xffffffff:
             return
-        hash_idx = mmh3.hash(src + dst, seed = self.hash_seed) % self.m
+        #hash_idx = mmh3.hash(src + dst, seed = self.hash_seed) % self.m
+        hash_idx = pre_sample_idx % self.m
         if self.R[hash_idx] < p:
             if self.R[hash_idx] != 0:
                 self.c[self.R[hash_idx] - 1] -= 1
             self.R[hash_idx] = p
             self.c[p - 1] += 1
-            sample_idx = mmh3.hash(src + dst, seed = self.sample_seed) % 0xffffffff
-            if sample_idx <= self.post_p[p - 1] * 0xffffffff:
+            #sample_idx = mmh3.hash(src + dst, seed = self.sample_seed) % 0xffffffff
+            if hash_idx <= self.post_p[p - 1] * self.m:
                 self.hash_table[p][src] += 1
                 self.downloads += 1
             sum_ = 0
