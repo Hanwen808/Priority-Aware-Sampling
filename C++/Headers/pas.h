@@ -1,7 +1,3 @@
-//
-// Created by lenovo on 2024/1/27.
-//
-
 #ifndef PAS_PAS_H
 #define PAS_PAS_H
 #include "register.h"
