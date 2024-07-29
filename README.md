@@ -12,5 +12,6 @@ The experimental results based on real Internet traces show that PAS reduces est
 
 ## About this repo
 
-- `CPU Implementation` contains source code for C++ and Python implementations of PAS and related work, which includes vHLL, rSkt(HLL), and NDS.
+- `C++ Implementation` contains source code for C++ implementations of PAS and related work, which includes vHLL, rSkt(HLL), and NDS.
+- `Python Implementation` contains source code for python implementations of PAS and related work, which includes vHLL, rSkt(HLL), and NDS.
 - `FPGA Implementation` contains the source code for NetFPGA implementation.
