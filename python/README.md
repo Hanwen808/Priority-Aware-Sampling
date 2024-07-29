@@ -7,6 +7,5 @@ On the CPU platform, the codes of priority-aware sampling and the baselines are 
 We evaluate the performance of our proposal and compared it with state-of-the-art algorithms. The compiling command is as follows.
 
 ```shell
-python ../main.py --method pas --dataset 2019 --prior_num 7 --p $4 --mem_kb $5
-./scripts 
+./scripts/exp_accuracy.sh
 ```
