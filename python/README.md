@@ -1,4 +1,4 @@
-# Python Codes for PipeFilter and Baselines
+# Python Codes for PAS and Baselines
 
 ## Descriptions
 We evaluate the estimation performance of our proposal and compared it with state-of-the-art algorithms. The run command is as follows.
