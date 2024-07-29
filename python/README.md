@@ -1,7 +1,4 @@
-# C++ Codes for PipeFilter and Baselines
-
-## Platform
-On the CPU platform, the codes of priority-aware sampling and the baselines are compiled using g++ version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.1) and run on a server equipped with two Intel(R) Xeon(R) Gold 6258R 2.70GHz CPUs and 754GB RAM.
+# Python Codes for PipeFilter and Baselines
 
 ## Descriptions
 We evaluate the estimation performance of our proposal and compared it with state-of-the-art algorithms. The run command is as follows.
